@@ -1,6 +1,7 @@
 package com.company;
 
 import java.util.HashMap;
+import java.util.HashSet;
 
 public class firstNotRepeatingCharacter {
 
@@ -20,6 +21,9 @@ public class firstNotRepeatingCharacter {
         }
         return '_';
     }
+
+
+
 }
 
 
