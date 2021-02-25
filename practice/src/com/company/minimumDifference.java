@@ -8,7 +8,7 @@ public class minimumDifference {
         Arrays.sort(arrayTwo);
         int idxOne=0, idxTwo=0;
         int smallest = Integer.MAX_VALUE;
-        int curr = Integer.MAX_VALUE;
+        int curr;
         int [] smallestPair = new int[2];
         while (idxOne < arrayOne.length && idxTwo<arrayTwo.length){
             int firstNum =arrayOne[idxOne];
