@@ -33,7 +33,6 @@ public class LargestRange {
                 bestRange = new int[] {left+1, right-1};
             }
         }
-
         return bestRange;
     }
 }
