@@ -1,6 +1,8 @@
 package com.company;
 
 public class numOfWaysToMakeChange {
+
+    // time O(nd) | space O(n)
     public static int numberOfWaysToMakeChange(int n, int[] denoms){
         int[] ways = new int[n+1];
         ways[0] = 1;
