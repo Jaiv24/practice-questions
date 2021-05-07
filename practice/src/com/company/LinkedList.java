@@ -10,7 +10,19 @@ public class LinkedList {
         head = newNode;
         length++;
     }
-
+    public void deleteHead(){
+        head = head.next;
+    }
+    public boolean findData(int data){
+        Node curr = head;
+        while (curr!=null){
+            if (curr.value == data){
+                return true;
+            }
+            curr = curr.next;
+        }
+        return false;
+    }
     public String toString(){
         String result = "{";
         Node curr = head;

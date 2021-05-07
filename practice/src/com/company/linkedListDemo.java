@@ -8,6 +8,8 @@ public class linkedListDemo {
         linkedList.insertAtHead(6);
         linkedList.insertAtHead(7);
         linkedList.insertAtHead(8);
+        linkedList.deleteHead();
+        System.out.println(linkedList.findData(5));
         System.out.println(linkedList);
 
     }
