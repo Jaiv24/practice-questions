@@ -10,7 +10,7 @@ public class Node {
     }
 
     public String toString(){
-        return "Data: " + this.value;
+        return "" + this.value;
     }
 
 }

@@ -23,6 +23,18 @@ public class LinkedList {
         }
         return false;
     }
+    public LinkedList RemoveDuplicatesFromLinkedList(LinkedList linkedList){
+        Node curr = head;
+        while (curr!=null){
+            Node nextDistinctNode = curr.next;
+            while (nextDistinctNode!=null && nextDistinctNode.value == curr.value){
+                nextDistinctNode = nextDistinctNode.next;
+            }
+            curr.next = nextDistinctNode;
+            curr = nextDistinctNode;
+        }
+        return linkedList;
+    }
     public String toString(){
         String result = "{";
         Node curr = head;
