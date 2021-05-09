@@ -8,6 +8,8 @@ public class bstDemo {
         myBinTree.insert(4);
         myBinTree.insert(7);
         System.out.println(myBinTree.search(4));
+        myBinTree.delete(4);
+        myBinTree.inOrder();
 
     }
 }

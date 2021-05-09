@@ -53,4 +53,64 @@ public class myBinTree {
         }
         return false;
     }
+    public void inOrder() {
+        inOrderRec(root);
+    }
+
+    private void inOrderRec(Bnode current) {
+        if (current != null){
+            inOrderRec(current.left);
+            System.out.print(" "+current.data);
+            inOrderRec(current.right);
+        }
+    }
+    public void preOrder(){
+        preOrderRec(root);
+    }
+
+    private void preOrderRec(Bnode current) {
+        if (current!=null){
+            System.out.print(" "+current.data);
+            preOrderRec(current.left);
+            preOrderRec(current.right);
+        }
+    }
+    public void postOrder(){
+        postOrderRec(root);
+    }
+
+    private void postOrderRec(Bnode current) {
+        if (current!=null){
+            postOrderRec(current.left);
+            postOrderRec(current.right);
+            System.out.print(" "+ current.data);
+        }
+    }
+    public void delete(int data){
+        root = deleteHelper(root, data);
+    }
+
+    private Bnode deleteHelper(Bnode root, int data) {
+        if (root == null){
+            return root;
+        }
+        if (data < root.data){
+            root.left = deleteHelper(root.left, data);
+        }
+        if (data > root.data){
+            root.right = deleteHelper(root.right, data);
+        }
+        if(data == root.data){
+            if (root.right == null) return root.left;
+            if (root.left == null) return root.right;
+
+            Bnode successor = root.right;
+            while (successor != null){
+                successor = successor.left;
+            }
+            root.data = successor.data;
+            root.right = deleteHelper(root.right, successor.data);
+        }
+        return root;
+    }
 }
