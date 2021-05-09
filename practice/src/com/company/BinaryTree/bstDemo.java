@@ -10,6 +10,6 @@ public class bstDemo {
         System.out.println(myBinTree.search(4));
         myBinTree.delete(4);
         myBinTree.inOrder();
-
+        System.out.println(com.company.BinaryTree.myBinTree.validateBst(myBinTree.root));
     }
 }

@@ -113,4 +113,33 @@ public class myBinTree {
         }
         return root;
     }
+    public static int findClosestValueInBst(Bnode tree, int target) {
+        // Write your code here.
+        return closestValueInBst(tree, target, tree.data);
+    }
+    public static int closestValueInBst(Bnode tree, int target, int closest){
+        if(Math.abs(target - closest)> Math.abs(target - tree.data)){
+            closest = tree.data;
+        }
+        if(target < tree.data && tree.left != null){
+            return closestValueInBst(tree.left, target, closest);
+        }else if(target > tree.data && tree.right != null){
+            return closestValueInBst(tree.right, target, closest);
+        }else{
+            return closest;
+        }
+    }
+    public static boolean validateBst(Bnode root) {
+        // Write your code here.
+        return checkBST(root, Integer.MIN_VALUE, Integer.MAX_VALUE);
+    }
+    public static boolean checkBST(Bnode tree, int min, int max){
+        if(tree == null){
+            return true;
+        }
+        if(tree.data < min || tree.data > max){
+            return false;
+        }
+        return checkBST(tree.left, min, tree.data-1) && checkBST(tree.right, tree.data, max);
+    }
 }
