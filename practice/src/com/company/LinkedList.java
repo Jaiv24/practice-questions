@@ -54,15 +54,15 @@ public class LinkedList {
         firstPointer.next = firstPointer.next.next;
     }
     public String toString(){
-        String result = "{";
+        StringBuilder result = new StringBuilder("{");
         Node curr = head;
 
         while (curr!=null){
-            result += curr.toString() + ",";
+            result.append(curr.toString()).append(",");
             curr = curr.next;
 
         }
-        result += "}";
-        return result;
+        result.append("}");
+        return result.toString();
     }
 }
