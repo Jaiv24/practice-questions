@@ -1,7 +1,7 @@
 package com.company;
 
 public class LinkedList {
-    public Node head;
+    public static Node head;
     int length = 0;
 
     public void insertAtHead(int data){
@@ -34,6 +34,24 @@ public class LinkedList {
             curr = nextDistinctNode;
         }
         return linkedList;
+    }
+    public static void removeKthNodeFromEnd(LinkedList linkedList, int k){
+        int i=0;
+        Node firstPointer = head;
+        Node secondPointer = head;
+        while (i <= k){
+            secondPointer = secondPointer.next;
+            i++;
+        }
+        if (secondPointer == null){
+            head.value = head.next.value;
+            head.next=head.next.next;
+        }
+        while (secondPointer.next != null){
+            secondPointer = secondPointer.next;
+            firstPointer = firstPointer.next;
+        }
+        firstPointer.next = firstPointer.next.next;
     }
     public String toString(){
         String result = "{";
